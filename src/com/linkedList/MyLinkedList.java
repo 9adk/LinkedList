@@ -79,6 +79,16 @@ public class MyLinkedList {
 		newNode.setNext(tempNode);
 	}
 
+	public void deleteNode(INode node) {
+		INode temp = head;
+		INode prev = null;
+		while (!temp.getKey().equals(node.getKey())) {
+			prev = temp;
+			temp = temp.getNext();
+		}
+		prev.setNext(temp.getNext());
+	}
+
 	public void printNodes() {
 		System.out.print("My Nodes ");
 		INode tempNode = head;

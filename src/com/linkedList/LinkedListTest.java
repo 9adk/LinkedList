@@ -23,6 +23,7 @@ public class LinkedListTest {
 				&& list.tail.equals(myFirstNode);
 		assertTrue(result);
 	}
+
 	/**
 	 * Usecase3
 	 */
@@ -38,11 +39,11 @@ public class LinkedListTest {
 		list.appendNode(mySecondNode);
 		list.appendNode(myThirdNode);
 		list.printNodes();
-		boolean result = list.head.equals(myFirstNode) &&
-						 list.head.getNext().equals(mySecondNode) &&
-						 list.tail.equals(myThirdNode);
+		boolean result = list.head.equals(myFirstNode) && list.head.getNext().equals(mySecondNode)
+				&& list.tail.equals(myThirdNode);
 		assertTrue(result);
 	}
+
 	/**
 	 * Usecase4
 	 */
@@ -56,13 +57,13 @@ public class LinkedListTest {
 		list.appendNode(myLastNode);
 		list.printNodes();
 		MyNode<Integer> newNode = new MyNode(30);
-		list.insert(myFirstNode,newNode);
+		list.insert(myFirstNode, newNode);
 		list.printNodes();
-		boolean result = list.head.equals(myFirstNode) &&
-						 list.head.getNext().equals(newNode) &&
-						 list.tail.equals(myLastNode);
+		boolean result = list.head.equals(myFirstNode) && list.head.getNext().equals(newNode)
+				&& list.tail.equals(myLastNode);
 		assertTrue(result);
 	}
+
 	/**
 	 * Usecase5
 	 */
@@ -80,13 +81,13 @@ public class LinkedListTest {
 		System.out.println("Before Deleting...");
 		list.printNodes();
 		INode temp = list.pop();
-		System.out.println("Deleted element is "+temp.getKey());
+		System.out.println("Deleted element is " + temp.getKey());
 		System.out.println("After Deleting...");
 		list.printNodes();
-		boolean result = list.head.equals(mySecondNode) &&
-						 list.tail.equals(myThirdNode);
+		boolean result = list.head.equals(mySecondNode) && list.tail.equals(myThirdNode);
 		assertTrue(result);
 	}
+
 	/**
 	 * Usecase6
 	 */
@@ -104,11 +105,11 @@ public class LinkedListTest {
 		System.out.println("Before Deleting...");
 		list.printNodes();
 		INode last = list.popLast();
-		System.out.println("Deleted element is "+ last.getKey());
-		boolean result = list.head.equals(myFirstNode) &&
-						 list.head.getNext().equals(mySecondNode);
+		System.out.println("Deleted element is " + last.getKey());
+		boolean result = list.head.equals(myFirstNode) && list.head.getNext().equals(mySecondNode);
 		assertTrue(result);
 	}
+
 	/**
 	 * Usecase7
 	 */
@@ -124,11 +125,11 @@ public class LinkedListTest {
 		list.appendNode(mySecondNode);
 		list.appendNode(myThirdNode);
 		list.searchNode(mySecondNode);
-		boolean result = list.head.equals(myFirstNode) &&
-				 list.head.getNext().equals(mySecondNode) &&
-				 list.tail.equals(myThirdNode);
+		boolean result = list.head.equals(myFirstNode) && list.head.getNext().equals(mySecondNode)
+				&& list.tail.equals(myThirdNode);
 		assertTrue(result);
 	}
+
 	/**
 	 * Usecase8
 	 */
@@ -145,11 +146,35 @@ public class LinkedListTest {
 		list.appendNode(myThirdNode);
 		list.printNodes();
 		MyNode<Integer> newNode = new MyNode(40);
-		list.insertNode(mySecondNode,newNode);
-		boolean result = list.head.equals(myFirstNode) &&
-						 list.head.getNext().equals(mySecondNode) &&
-						 list.head.getNext().getNext().equals(newNode) &&
-						 list.tail.equals(myThirdNode);
+		list.insertNode(mySecondNode, newNode);
+		boolean result = list.head.equals(myFirstNode) && list.head.getNext().equals(mySecondNode)
+				&& list.head.getNext().getNext().equals(newNode) && list.tail.equals(myThirdNode);
+		assertTrue(result);
+	}
+
+	/**
+	 * Usecase9
+	 */
+	@Test
+	public void givenMethodShouldDeleteANode() {
+		MyNode<Integer> myFirstNode = new MyNode(56);
+		MyNode<Integer> mySecondNode = new MyNode(30);
+		MyNode<Integer> myThirdNode = new MyNode(40);
+		MyNode<Integer> myLastNode = new MyNode(70);
+		myFirstNode.setNext(mySecondNode);
+		mySecondNode.setNext(myThirdNode);
+		myThirdNode.setNext(myThirdNode);
+		MyLinkedList list = new MyLinkedList();
+		list.appendNode(myFirstNode);
+		list.appendNode(mySecondNode);
+		list.appendNode(myThirdNode);
+		list.appendNode(myLastNode);
+		list.printNodes();
+		System.out.println("After deleting");
+		list.deleteNode(myThirdNode);
+		list.printNodes();
+		boolean result = list.head.equals(myFirstNode) && list.head.getNext().equals(mySecondNode)
+				&& list.tail.equals(myLastNode);
 		assertTrue(result);
 	}
 }
