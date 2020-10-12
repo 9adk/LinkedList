@@ -43,6 +43,9 @@ public class LinkedListTest {
 						 list.tail.equals(myThirdNode);
 		assertTrue(result);
 	}
+	/**
+	 * Usecase4
+	 */
 	@Test
 	public void givenInputToInsertShouldAddedInBetween() {
 		MyNode<Integer> myFirstNode = new MyNode(56);
@@ -58,6 +61,30 @@ public class LinkedListTest {
 		boolean result = list.head.equals(myFirstNode) &&
 						 list.head.getNext().equals(newNode) &&
 						 list.tail.equals(myLastNode);
+		assertTrue(result);
+	}
+	/**
+	 * Usecase5
+	 */
+	@Test
+	public void givenMethodShouldDeleteHead() {
+		MyNode<Integer> myFirstNode = new MyNode(56);
+		MyNode<Integer> mySecondNode = new MyNode(30);
+		MyNode<Integer> myThirdNode = new MyNode(70);
+		myFirstNode.setNext(mySecondNode);
+		mySecondNode.setNext(myThirdNode);
+		MyLinkedList list = new MyLinkedList();
+		list.appendNode(myFirstNode);
+		list.appendNode(mySecondNode);
+		list.appendNode(myThirdNode);
+		System.out.println("Before Deleting...");
+		list.printNodes();
+		INode temp = list.pop();
+		System.out.println("Deleted element is "+temp.getKey());
+		System.out.println("After Deleting...");
+		list.printNodes();
+		boolean result = list.head.equals(mySecondNode) &&
+						 list.tail.equals(myThirdNode);
 		assertTrue(result);
 	}
 }
