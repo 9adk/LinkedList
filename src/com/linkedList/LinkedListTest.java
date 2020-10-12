@@ -5,6 +5,9 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.Test;
 
 public class LinkedListTest {
+	/**
+	 * Usecase1,Usecase2
+	 */
 	@Test
 	public void givenInputShouldBeAddedToTheTop() {
 		MyNode<Integer> myFirstNode = new MyNode(70);
@@ -18,6 +21,26 @@ public class LinkedListTest {
 		list.addNode(myThirdNode);
 		boolean result = list.head.equals(myThirdNode) && list.head.getNext().equals(mySecondNode)
 				&& list.tail.equals(myFirstNode);
+		assertTrue(result);
+	}
+	/**
+	 * Usecase3
+	 */
+	@Test
+	public void givenInputToAppendShouldAddedToLast() {
+		MyNode<Integer> myFirstNode = new MyNode(56);
+		MyNode<Integer> mySecondNode = new MyNode(30);
+		MyNode<Integer> myThirdNode = new MyNode(70);
+		myFirstNode.setNext(mySecondNode);
+		mySecondNode.setNext(myThirdNode);
+		MyLinkedList list = new MyLinkedList();
+		list.appendNode(myFirstNode);
+		list.appendNode(mySecondNode);
+		list.appendNode(myThirdNode);
+		list.printNodes();
+		boolean result = list.head.equals(myFirstNode) &&
+						 list.head.getNext().equals(mySecondNode) &&
+						 list.tail.equals(myThirdNode);
 		assertTrue(result);
 	}
 }
