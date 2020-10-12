@@ -129,4 +129,27 @@ public class LinkedListTest {
 				 list.tail.equals(myThirdNode);
 		assertTrue(result);
 	}
+	/**
+	 * Usecase8
+	 */
+	@Test
+	public void givenInputToInsertShouldAddedAfterNode() {
+		MyNode<Integer> myFirstNode = new MyNode(56);
+		MyNode<Integer> mySecondNode = new MyNode(30);
+		MyNode<Integer> myThirdNode = new MyNode(70);
+		myFirstNode.setNext(mySecondNode);
+		mySecondNode.setNext(myThirdNode);
+		MyLinkedList list = new MyLinkedList();
+		list.appendNode(myFirstNode);
+		list.appendNode(mySecondNode);
+		list.appendNode(myThirdNode);
+		list.printNodes();
+		MyNode<Integer> newNode = new MyNode(40);
+		list.insertNode(mySecondNode,newNode);
+		boolean result = list.head.equals(myFirstNode) &&
+						 list.head.getNext().equals(mySecondNode) &&
+						 list.head.getNext().getNext().equals(newNode) &&
+						 list.tail.equals(myThirdNode);
+		assertTrue(result);
+	}
 }

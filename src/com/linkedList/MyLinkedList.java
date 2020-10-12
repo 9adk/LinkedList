@@ -69,6 +69,16 @@ public class MyLinkedList {
 		System.out.println("Not Found");
 	}
 
+	public void insertNode(INode myNode, INode newNode) {
+		INode tempNode = head;
+		while (!tempNode.getNext().equals(myNode)) {
+			tempNode = tempNode.getNext();
+		}
+		tempNode = tempNode.getNext();
+		myNode.setNext(newNode);
+		newNode.setNext(tempNode);
+	}
+
 	public void printNodes() {
 		System.out.print("My Nodes ");
 		INode tempNode = head;
