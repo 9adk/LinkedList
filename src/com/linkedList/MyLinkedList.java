@@ -46,15 +46,29 @@ public class MyLinkedList {
 		this.head = head.getNext();
 		return temp;
 	}
+
 	public INode popLast() {
 		INode temp = head;
-		while(!temp.getNext().equals(tail)) {
+		while (!temp.getNext().equals(tail)) {
 			temp = temp.getNext();
 		}
 		this.tail = temp;
 		temp = temp.getNext();
 		return temp;
 	}
+
+	public void searchNode(INode search) {
+		INode temp = head;
+		while (temp != null && temp.getNext() != null) {
+			if (temp.getKey() == search.getKey()) {
+				System.out.println("Found the node");
+				return;
+			}
+			temp = temp.getNext();
+		}
+		System.out.println("Not Found");
+	}
+
 	public void printNodes() {
 		System.out.print("My Nodes ");
 		INode tempNode = head;

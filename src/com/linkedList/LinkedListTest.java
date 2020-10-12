@@ -109,4 +109,24 @@ public class LinkedListTest {
 						 list.head.getNext().equals(mySecondNode);
 		assertTrue(result);
 	}
+	/**
+	 * Usecase7
+	 */
+	@Test
+	public void givenMethodShouldSearchForNode() {
+		MyNode<Integer> myFirstNode = new MyNode(56);
+		MyNode<Integer> mySecondNode = new MyNode(30);
+		MyNode<Integer> myThirdNode = new MyNode(70);
+		myFirstNode.setNext(mySecondNode);
+		mySecondNode.setNext(myThirdNode);
+		MyLinkedList list = new MyLinkedList();
+		list.appendNode(myFirstNode);
+		list.appendNode(mySecondNode);
+		list.appendNode(myThirdNode);
+		list.searchNode(mySecondNode);
+		boolean result = list.head.equals(myFirstNode) &&
+				 list.head.getNext().equals(mySecondNode) &&
+				 list.tail.equals(myThirdNode);
+		assertTrue(result);
+	}
 }
