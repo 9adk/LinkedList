@@ -6,14 +6,18 @@ import org.junit.jupiter.api.Test;
 
 public class LinkedListTest {
 	@Test
-	public void givenInputShouldCreateLinkedList() {
-		MyNode<Integer> myFirstNode = new MyNode(56);
+	public void givenInputShouldBeAddedToTheTop() {
+		MyNode<Integer> myFirstNode = new MyNode(70);
 		MyNode<Integer> mySecondNode = new MyNode(30);
-		MyNode<Integer> myThirdNode = new MyNode(70);
+		MyNode<Integer> myThirdNode = new MyNode(56);
 		myFirstNode.setNext(mySecondNode);
 		mySecondNode.setNext(myThirdNode);
-
-		boolean result = myFirstNode.getNext().equals(mySecondNode) && mySecondNode.getNext().equals(myThirdNode);
+		MyLinkedList list = new MyLinkedList();
+		list.addNode(myFirstNode);
+		list.addNode(mySecondNode);
+		list.addNode(myThirdNode);
+		boolean result = list.head.equals(myThirdNode) && list.head.getNext().equals(mySecondNode)
+				&& list.tail.equals(myFirstNode);
 		assertTrue(result);
 	}
 }
