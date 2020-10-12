@@ -87,4 +87,26 @@ public class LinkedListTest {
 						 list.tail.equals(myThirdNode);
 		assertTrue(result);
 	}
+	/**
+	 * Usecase6
+	 */
+	@Test
+	public void givenMethodShouldDeleteLast() {
+		MyNode<Integer> myFirstNode = new MyNode(56);
+		MyNode<Integer> mySecondNode = new MyNode(30);
+		MyNode<Integer> myThirdNode = new MyNode(70);
+		myFirstNode.setNext(mySecondNode);
+		mySecondNode.setNext(myThirdNode);
+		MyLinkedList list = new MyLinkedList();
+		list.appendNode(myFirstNode);
+		list.appendNode(mySecondNode);
+		list.appendNode(myThirdNode);
+		System.out.println("Before Deleting...");
+		list.printNodes();
+		INode last = list.popLast();
+		System.out.println("Deleted element is "+ last.getKey());
+		boolean result = list.head.equals(myFirstNode) &&
+						 list.head.getNext().equals(mySecondNode);
+		assertTrue(result);
+	}
 }
