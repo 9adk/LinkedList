@@ -61,7 +61,7 @@ public class MyLinkedList {
 		INode temp = head;
 		while (temp != null && temp.getNext() != null) {
 			if (temp.getKey() == search.getKey()) {
-				System.out.println("Found the node");
+				System.out.println("Found the node " + search.getKey());
 				return;
 			}
 			temp = temp.getNext();
@@ -87,6 +87,16 @@ public class MyLinkedList {
 			temp = temp.getNext();
 		}
 		prev.setNext(temp.getNext());
+	}
+
+	public int size() {
+		INode temp = head;
+		int count = 0;
+		while (!temp.equals(tail)) {
+			count++;
+			temp = temp.getNext();
+		}
+		return count + 1;
 	}
 
 	public void printNodes() {

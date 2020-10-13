@@ -13,8 +13,7 @@ public class LinkedListTest {
 		MyNode<Integer> myFirstNode = new MyNode(70);
 		MyNode<Integer> mySecondNode = new MyNode(30);
 		MyNode<Integer> myThirdNode = new MyNode(56);
-		myFirstNode.setNext(mySecondNode);
-		mySecondNode.setNext(myThirdNode);
+		
 		MyLinkedList list = new MyLinkedList();
 		list.addNode(myFirstNode);
 		list.addNode(mySecondNode);
@@ -32,8 +31,7 @@ public class LinkedListTest {
 		MyNode<Integer> myFirstNode = new MyNode(56);
 		MyNode<Integer> mySecondNode = new MyNode(30);
 		MyNode<Integer> myThirdNode = new MyNode(70);
-		myFirstNode.setNext(mySecondNode);
-		mySecondNode.setNext(myThirdNode);
+		
 		MyLinkedList list = new MyLinkedList();
 		list.appendNode(myFirstNode);
 		list.appendNode(mySecondNode);
@@ -51,7 +49,7 @@ public class LinkedListTest {
 	public void givenInputToInsertShouldAddedInBetween() {
 		MyNode<Integer> myFirstNode = new MyNode(56);
 		MyNode<Integer> myLastNode = new MyNode(70);
-		myFirstNode.setNext(myLastNode);
+
 		MyLinkedList list = new MyLinkedList();
 		list.appendNode(myFirstNode);
 		list.appendNode(myLastNode);
@@ -72,8 +70,7 @@ public class LinkedListTest {
 		MyNode<Integer> myFirstNode = new MyNode(56);
 		MyNode<Integer> mySecondNode = new MyNode(30);
 		MyNode<Integer> myThirdNode = new MyNode(70);
-		myFirstNode.setNext(mySecondNode);
-		mySecondNode.setNext(myThirdNode);
+		
 		MyLinkedList list = new MyLinkedList();
 		list.appendNode(myFirstNode);
 		list.appendNode(mySecondNode);
@@ -96,8 +93,7 @@ public class LinkedListTest {
 		MyNode<Integer> myFirstNode = new MyNode(56);
 		MyNode<Integer> mySecondNode = new MyNode(30);
 		MyNode<Integer> myThirdNode = new MyNode(70);
-		myFirstNode.setNext(mySecondNode);
-		mySecondNode.setNext(myThirdNode);
+		
 		MyLinkedList list = new MyLinkedList();
 		list.appendNode(myFirstNode);
 		list.appendNode(mySecondNode);
@@ -118,8 +114,7 @@ public class LinkedListTest {
 		MyNode<Integer> myFirstNode = new MyNode(56);
 		MyNode<Integer> mySecondNode = new MyNode(30);
 		MyNode<Integer> myThirdNode = new MyNode(70);
-		myFirstNode.setNext(mySecondNode);
-		mySecondNode.setNext(myThirdNode);
+		
 		MyLinkedList list = new MyLinkedList();
 		list.appendNode(myFirstNode);
 		list.appendNode(mySecondNode);
@@ -138,8 +133,7 @@ public class LinkedListTest {
 		MyNode<Integer> myFirstNode = new MyNode(56);
 		MyNode<Integer> mySecondNode = new MyNode(30);
 		MyNode<Integer> myThirdNode = new MyNode(70);
-		myFirstNode.setNext(mySecondNode);
-		mySecondNode.setNext(myThirdNode);
+		
 		MyLinkedList list = new MyLinkedList();
 		list.appendNode(myFirstNode);
 		list.appendNode(mySecondNode);
@@ -161,18 +155,18 @@ public class LinkedListTest {
 		MyNode<Integer> mySecondNode = new MyNode(30);
 		MyNode<Integer> myThirdNode = new MyNode(40);
 		MyNode<Integer> myLastNode = new MyNode(70);
-		myFirstNode.setNext(mySecondNode);
-		mySecondNode.setNext(myThirdNode);
-		myThirdNode.setNext(myThirdNode);
+		
 		MyLinkedList list = new MyLinkedList();
 		list.appendNode(myFirstNode);
 		list.appendNode(mySecondNode);
 		list.appendNode(myThirdNode);
 		list.appendNode(myLastNode);
 		list.printNodes();
+		System.out.println(list.size());
 		System.out.println("After deleting");
 		list.deleteNode(myThirdNode);
 		list.printNodes();
+		System.out.println(list.size());
 		boolean result = list.head.equals(myFirstNode) && list.head.getNext().equals(mySecondNode)
 				&& list.tail.equals(myLastNode);
 		assertTrue(result);
