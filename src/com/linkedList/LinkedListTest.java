@@ -10,7 +10,7 @@ public class LinkedListTest {
 	 * Usecase1,Usecase2
 	 */
 	@Test
-	public void givenInputShouldBeAddedToTheTop() {
+	public void given3Numbers_WhenAddedToLinkedList_ShouldBeAddedToTheTop() {
 		MyNode<Integer> myFirstNode = new MyNode(70);
 		MyNode<Integer> mySecondNode = new MyNode(30);
 		MyNode<Integer> myThirdNode = new MyNode(56);
@@ -30,7 +30,7 @@ public class LinkedListTest {
 	 * Usecase3
 	 */
 	@Test
-	public void givenInputToAppendShouldAddedToLast() {
+	public void given3Numbers_WhenAppendedToLinkedList_ShouldBeAddedToTheLast() {
 		MyNode<Integer> myFirstNode = new MyNode(56);
 		MyNode<Integer> mySecondNode = new MyNode(30);
 		MyNode<Integer> myThirdNode = new MyNode(70);
@@ -51,7 +51,7 @@ public class LinkedListTest {
 	 * Usecase4
 	 */
 	@Test
-	public void givenInputToInsertShouldAddedInBetween() {
+	public void given3Numbers_WhenInsertingSecondInBetween_ShouldPassLinkedListResult() {
 		MyNode<Integer> myFirstNode = new MyNode(56);
 		MyNode<Integer> myLastNode = new MyNode(70);
 
@@ -73,7 +73,7 @@ public class LinkedListTest {
 	 * Usecase5
 	 */
 	@Test
-	public void givenMethodShouldDeleteHead() {
+	public void givenFirstElement_WhenDeleted_ShouldPassLinkedList() {
 		MyNode<Integer> myFirstNode = new MyNode(56);
 		MyNode<Integer> mySecondNode = new MyNode(30);
 		MyNode<Integer> myThirdNode = new MyNode(70);
@@ -98,7 +98,7 @@ public class LinkedListTest {
 	 * Usecase6
 	 */
 	@Test
-	public void givenMethodShouldDeleteLast() {
+	public void giveLastElement_WhenDeleted_ShouldPassLinkedList() {
 		MyNode<Integer> myFirstNode = new MyNode(56);
 		MyNode<Integer> mySecondNode = new MyNode(30);
 		MyNode<Integer> myThirdNode = new MyNode(70);
@@ -123,7 +123,7 @@ public class LinkedListTest {
 	 * Usecase7
 	 */
 	@Test
-	public void givenMethodShouldSearchForNode() {
+	public void givenNumber_WhenSearchedInLinkedList_ShouldPassLinkedListResult() {
 		MyNode<Integer> myFirstNode = new MyNode(56);
 		MyNode<Integer> mySecondNode = new MyNode(30);
 		MyNode<Integer> myThirdNode = new MyNode(70);
@@ -144,7 +144,7 @@ public class LinkedListTest {
 	 * Usecase8
 	 */
 	@Test
-	public void givenInputToInsertShouldAddedAfterNode() {
+	public void given3Numbers_WhenInsertingANumberAfterAspecificNode_ShouldPassLinkedListResult() {
 		MyNode<Integer> myFirstNode = new MyNode(56);
 		MyNode<Integer> mySecondNode = new MyNode(30);
 		MyNode<Integer> myThirdNode = new MyNode(70);
@@ -167,7 +167,7 @@ public class LinkedListTest {
 	 * Usecase9
 	 */
 	@Test
-	public void givenMethodShouldDeleteANode() {
+	public void given3Numbers_WhenDeletedASpecificNode_ShouldPassLinkedListResult() {
 		MyNode<Integer> myFirstNode = new MyNode(56);
 		MyNode<Integer> mySecondNode = new MyNode(30);
 		MyNode<Integer> myThirdNode = new MyNode(40);
